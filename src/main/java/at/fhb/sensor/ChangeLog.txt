@@ -1,1 +1,5 @@
+1. GEHÖRT EIGENTLICH INS RESOURCES
 
+28.09.2023
+Sensor Klasse erstellt.
+Changelogtxt Datei für Nachverfolgung erstellt. 
