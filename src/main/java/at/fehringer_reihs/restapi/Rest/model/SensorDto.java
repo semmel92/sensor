@@ -13,10 +13,13 @@ public class SensorDto {
     private SensorType type;
 
     public SensorDto() {
-        this.id = 1;
-        this.name = "TestSensor";
-        this.location = "TestLocation";
-        this.active = false;
-        this.type = SensorType.INDOOR;
+    }
+
+    public SensorDto(long id, String name, String location, boolean active, SensorType type) {
+        this.id = id;
+        this.name = name;
+        this.location = location;
+        this.active = active;
+        this.type = type;
     }
 }

@@ -1,8 +1,8 @@
 package at.fehringer_reihs.restapi.Service;
 
 import at.fehringer_reihs.restapi.Repository.SensorRepository;
+import at.fehringer_reihs.restapi.Repository.model.Measurement;
 import at.fehringer_reihs.restapi.Repository.model.Sensor;
-import at.fehringer_reihs.restapi.Rest.model.SensorDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -29,12 +29,19 @@ public class SensorServiceImpl implements SensorService {
     }
 
     @Override
-    public Sensor createSensor(Sensor sensorDto) {
-        return sensorRepository.save(sensorDto);
+    public Sensor createSensor(Sensor sensor) {
+        return sensorRepository.save(sensor);
     }
 
     @Override
     public void deleteSensor(Long id) {
         sensorRepository.deleteById(id);
+    }
+
+    @Override
+    public Sensor addMeasurementToSensor(Measurement measurement, Sensor sensor) {
+        measurement.setSensor(sensor);
+        sensor.getMeasurements().add(measurement);
+        return sensorRepository.save(sensor);
     }
 }

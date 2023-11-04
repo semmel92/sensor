@@ -1,5 +1,6 @@
 package at.fehringer_reihs.restapi.Service;
 
+import at.fehringer_reihs.restapi.Repository.model.Measurement;
 import at.fehringer_reihs.restapi.Repository.model.Sensor;
 import org.springframework.stereotype.Service;
 
@@ -12,4 +13,5 @@ public interface SensorService {
     Optional<Sensor> getSensor(long id);
     Sensor createSensor(Sensor sensorRest);
     void deleteSensor(Long id);
+    Sensor addMeasurementToSensor(Measurement measurement, Sensor sensor);
 }

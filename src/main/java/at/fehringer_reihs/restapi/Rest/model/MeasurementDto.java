@@ -14,9 +14,14 @@ public class MeasurementDto {
     private double humidity;
 
     public MeasurementDto() {
-        this.sensorId = 1;
-        this.temperature = 10;
-        this.humidity = 0.2;
-        this.timestamp = LocalDateTime.now();
+        //TODO delete this once frontend implemented, only for testing
+        timestamp = LocalDateTime.now();
+    }
+
+    public MeasurementDto(long sensorId, LocalDateTime timestamp, double temperature, double humidity) {
+        this.sensorId = sensorId;
+        this.timestamp = timestamp;
+        this.temperature = temperature;
+        this.humidity = humidity;
     }
 }
