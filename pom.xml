@@ -8,19 +8,36 @@
     <packaging>pom</packaging>
 
     <modules>
-<!--        <module>service-registry</module>-->
-<!--        <module>config-server</module>-->
-<!--        <module>some other service</module>-->
+        <!-- Module list -->
         <module>restapi</module>
+        <module>gateway</module>
+        <!-- Other modules -->
     </modules>
 
     <dependencyManagement>
-        <!-- Define common dependencies here -->
+        <dependencies>
+            <!-- Spring Cloud BOM -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>2022.0.3</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Spring Boot BOM -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>3.1.4</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
     </dependencyManagement>
 
-    <build>
-        <!-- Define common build configurations, if any -->
-    </build>
 
+    <build>
+        <!-- Common build configurations -->
+    </build>
     <!-- Common properties, plugin configurations, etc. -->
 </project>
